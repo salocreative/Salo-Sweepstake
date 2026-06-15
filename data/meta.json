@@ -1,0 +1,19 @@
+{
+  "competition": "WC",
+  "competitionName": "FIFA World Cup",
+  "season": {
+    "id": 2398,
+    "startDate": "2026-06-11",
+    "endDate": "2026-07-19",
+    "currentMatchday": 1,
+    "winner": null
+  },
+  "generatedAt": "2026-06-15T08:10:01.130Z",
+  "counts": {
+    "teams": 48,
+    "matches": 104,
+    "standings": 12,
+    "sweepstakeTeams": 48,
+    "unmatched": 0
+  }
+}

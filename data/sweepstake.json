@@ -1,0 +1,482 @@
+[
+  {
+    "owner": "Carl",
+    "tier": "Elite",
+    "flag": "🇫🇷",
+    "name": "France",
+    "apiId": 773,
+    "apiName": "France",
+    "tla": "FRA",
+    "crest": "https://crests.football-data.org/773.svg"
+  },
+  {
+    "owner": "Carl",
+    "tier": "Strong",
+    "flag": "🇸🇳",
+    "name": "Senegal",
+    "apiId": 804,
+    "apiName": "Senegal",
+    "tla": "SEN",
+    "crest": "https://crests.football-data.org/senegal.svg"
+  },
+  {
+    "owner": "Carl",
+    "tier": "Challengers",
+    "flag": "🇲🇽",
+    "name": "Mexico",
+    "apiId": 769,
+    "apiName": "Mexico",
+    "tla": "MEX",
+    "crest": "https://crests.football-data.org/769.svg"
+  },
+  {
+    "owner": "Carl",
+    "tier": "Competitive",
+    "flag": "🇨🇮",
+    "name": "Ivory Coast",
+    "apiId": 1935,
+    "apiName": "Ivory Coast",
+    "tla": "CIV",
+    "crest": "https://crests.football-data.org/787.svg"
+  },
+  {
+    "owner": "Carl",
+    "tier": "Outsiders",
+    "flag": "🇿🇦",
+    "name": "South Africa",
+    "apiId": 774,
+    "apiName": "South Africa",
+    "tla": "RSA",
+    "crest": "https://crests.football-data.org/9396.svg"
+  },
+  {
+    "owner": "Carl",
+    "tier": "Underdogs",
+    "flag": "🇵🇾",
+    "name": "Paraguay",
+    "apiId": 761,
+    "apiName": "Paraguay",
+    "tla": "PAR",
+    "crest": "https://crests.football-data.org/761.svg"
+  },
+  {
+    "owner": "Josh",
+    "tier": "Elite",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "name": "England",
+    "apiId": 770,
+    "apiName": "England",
+    "tla": "ENG",
+    "crest": "https://crests.football-data.org/770.svg"
+  },
+  {
+    "owner": "Josh",
+    "tier": "Strong",
+    "flag": "🇧🇪",
+    "name": "Belgium",
+    "apiId": 805,
+    "apiName": "Belgium",
+    "tla": "BEL",
+    "crest": "https://crests.football-data.org/805.svg"
+  },
+  {
+    "owner": "Josh",
+    "tier": "Challengers",
+    "flag": "🇪🇨",
+    "name": "Ecuador",
+    "apiId": 791,
+    "apiName": "Ecuador",
+    "tla": "ECU",
+    "crest": "https://crests.football-data.org/791.svg"
+  },
+  {
+    "owner": "Josh",
+    "tier": "Competitive",
+    "flag": "🇮🇶",
+    "name": "Iraq",
+    "apiId": 8062,
+    "apiName": "Iraq",
+    "tla": "IRQ",
+    "crest": "https://crests.football-data.org/iraq.svg"
+  },
+  {
+    "owner": "Josh",
+    "tier": "Outsiders",
+    "flag": "🇸🇦",
+    "name": "Saudi Arabia",
+    "apiId": 801,
+    "apiName": "Saudi Arabia",
+    "tla": "KSA",
+    "crest": "https://crests.football-data.org/saudi_arabia.svg"
+  },
+  {
+    "owner": "Josh",
+    "tier": "Underdogs",
+    "flag": "🇨🇿",
+    "name": "Czech Republic",
+    "apiId": 798,
+    "apiName": "Czechia",
+    "tla": "CZE",
+    "crest": "https://crests.football-data.org/798.svg"
+  },
+  {
+    "owner": "Toby",
+    "tier": "Elite",
+    "flag": "🇧🇷",
+    "name": "Brazil",
+    "apiId": 764,
+    "apiName": "Brazil",
+    "tla": "BRA",
+    "crest": "https://crests.football-data.org/764.svg"
+  },
+  {
+    "owner": "Toby",
+    "tier": "Strong",
+    "flag": "🇲🇦",
+    "name": "Morocco",
+    "apiId": 815,
+    "apiName": "Morocco",
+    "tla": "MAR",
+    "crest": "https://crests.football-data.org/morocco.svg"
+  },
+  {
+    "owner": "Toby",
+    "tier": "Challengers",
+    "flag": "🇹🇳",
+    "name": "Tunisia",
+    "apiId": 802,
+    "apiName": "Tunisia",
+    "tla": "TUN",
+    "crest": "https://crests.football-data.org/tunisia.svg"
+  },
+  {
+    "owner": "Toby",
+    "tier": "Competitive",
+    "flag": "🇸🇪",
+    "name": "Sweden",
+    "apiId": 792,
+    "apiName": "Sweden",
+    "tla": "SWE",
+    "crest": "https://crests.football-data.org/792.svg"
+  },
+  {
+    "owner": "Toby",
+    "tier": "Outsiders",
+    "flag": "🇨🇩",
+    "name": "DR Congo",
+    "apiId": 1934,
+    "apiName": "Congo DR",
+    "tla": "COD",
+    "crest": "https://crests.football-data.org/congo_dr.svg"
+  },
+  {
+    "owner": "Toby",
+    "tier": "Underdogs",
+    "flag": "🇨🇻",
+    "name": "Cape Verde Islands",
+    "apiId": 1930,
+    "apiName": "Cape Verde Islands",
+    "tla": "CPV",
+    "crest": "https://crests.football-data.org/cape_verde.svg"
+  },
+  {
+    "owner": "Sarah",
+    "tier": "Elite",
+    "flag": "🇦🇷",
+    "name": "Argentina",
+    "apiId": 762,
+    "apiName": "Argentina",
+    "tla": "ARG",
+    "crest": "https://crests.football-data.org/762.png"
+  },
+  {
+    "owner": "Sarah",
+    "tier": "Strong",
+    "flag": "🇺🇸",
+    "name": "USA",
+    "apiId": 771,
+    "apiName": "United States",
+    "tla": "USA",
+    "crest": "https://crests.football-data.org/usa.svg"
+  },
+  {
+    "owner": "Sarah",
+    "tier": "Challengers",
+    "flag": "🇨🇭",
+    "name": "Switzerland",
+    "apiId": 788,
+    "apiName": "Switzerland",
+    "tla": "SUI",
+    "crest": "https://crests.football-data.org/788.svg"
+  },
+  {
+    "owner": "Sarah",
+    "tier": "Competitive",
+    "flag": "🇹🇷",
+    "name": "Turkey",
+    "apiId": 803,
+    "apiName": "Turkey",
+    "tla": "TUR",
+    "crest": "https://crests.football-data.org/803.svg"
+  },
+  {
+    "owner": "Sarah",
+    "tier": "Outsiders",
+    "flag": "🇵🇦",
+    "name": "Panama",
+    "apiId": 1836,
+    "apiName": "Panama",
+    "tla": "PAN",
+    "crest": "https://crests.football-data.org/panama.svg"
+  },
+  {
+    "owner": "Sarah",
+    "tier": "Underdogs",
+    "flag": "🇭🇹",
+    "name": "Haiti",
+    "apiId": 836,
+    "apiName": "Haiti",
+    "tla": "HAI",
+    "crest": "https://crests.football-data.org/haiti.svg"
+  },
+  {
+    "owner": "Sophie",
+    "tier": "Elite",
+    "flag": "🇪🇸",
+    "name": "Spain",
+    "apiId": 760,
+    "apiName": "Spain",
+    "tla": "ESP",
+    "crest": "https://crests.football-data.org/760.svg"
+  },
+  {
+    "owner": "Sophie",
+    "tier": "Strong",
+    "flag": "🇭🇷",
+    "name": "Croatia",
+    "apiId": 799,
+    "apiName": "Croatia",
+    "tla": "CRO",
+    "crest": "https://crests.football-data.org/799.svg"
+  },
+  {
+    "owner": "Sophie",
+    "tier": "Challengers",
+    "flag": "🇨🇼",
+    "name": "Curaçao",
+    "apiId": 9460,
+    "apiName": "Curaçao",
+    "tla": "CUW",
+    "crest": "https://crests.football-data.org/curacao.svg"
+  },
+  {
+    "owner": "Sophie",
+    "tier": "Competitive",
+    "flag": "🇧🇦",
+    "name": "Bosnia-Herzegovina",
+    "apiId": 1060,
+    "apiName": "Bosnia-Herzegovina",
+    "tla": "BIH",
+    "crest": "https://crests.football-data.org/bosnia.svg"
+  },
+  {
+    "owner": "Sophie",
+    "tier": "Outsiders",
+    "flag": "🇺🇿",
+    "name": "Uzbekistan",
+    "apiId": 8070,
+    "apiName": "Uzbekistan",
+    "tla": "UZB",
+    "crest": "https://crests.football-data.org/8070.png"
+  },
+  {
+    "owner": "Sophie",
+    "tier": "Underdogs",
+    "flag": "🇳🇿",
+    "name": "New Zealand",
+    "apiId": 783,
+    "apiName": "New Zealand",
+    "tla": "NZL",
+    "crest": "https://crests.football-data.org/783.svg"
+  },
+  {
+    "owner": "James",
+    "tier": "Elite",
+    "flag": "🇵🇹",
+    "name": "Portugal",
+    "apiId": 765,
+    "apiName": "Portugal",
+    "tla": "POR",
+    "crest": "https://crests.football-data.org/765.svg"
+  },
+  {
+    "owner": "James",
+    "tier": "Strong",
+    "flag": "🇨🇴",
+    "name": "Colombia",
+    "apiId": 818,
+    "apiName": "Colombia",
+    "tla": "COL",
+    "crest": "https://crests.football-data.org/818.svg"
+  },
+  {
+    "owner": "James",
+    "tier": "Challengers",
+    "flag": "🇦🇺",
+    "name": "Australia",
+    "apiId": 779,
+    "apiName": "Australia",
+    "tla": "AUS",
+    "crest": "https://crests.football-data.org/779.svg"
+  },
+  {
+    "owner": "James",
+    "tier": "Competitive",
+    "flag": "🇦🇹",
+    "name": "Austria",
+    "apiId": 816,
+    "apiName": "Austria",
+    "tla": "AUT",
+    "crest": "https://crests.football-data.org/816.svg"
+  },
+  {
+    "owner": "James",
+    "tier": "Outsiders",
+    "flag": "🇩🇿",
+    "name": "Algeria",
+    "apiId": 778,
+    "apiName": "Algeria",
+    "tla": "ALG",
+    "crest": "https://crests.football-data.org/algeria.svg"
+  },
+  {
+    "owner": "James",
+    "tier": "Underdogs",
+    "flag": "🇶🇦",
+    "name": "Qatar",
+    "apiId": 8030,
+    "apiName": "Qatar",
+    "tla": "QAT",
+    "crest": "https://crests.football-data.org/8030.svg"
+  },
+  {
+    "owner": "Kurt",
+    "tier": "Elite",
+    "flag": "🇩🇪",
+    "name": "Germany",
+    "apiId": 759,
+    "apiName": "Germany",
+    "tla": "GER",
+    "crest": "https://crests.football-data.org/759.svg"
+  },
+  {
+    "owner": "Kurt",
+    "tier": "Strong",
+    "flag": "🇺🇾",
+    "name": "Uruguay",
+    "apiId": 758,
+    "apiName": "Uruguay",
+    "tla": "URY",
+    "crest": "https://crests.football-data.org/758.svg"
+  },
+  {
+    "owner": "Kurt",
+    "tier": "Challengers",
+    "flag": "🇰🇷",
+    "name": "South Korea",
+    "apiId": 772,
+    "apiName": "South Korea",
+    "tla": "KOR",
+    "crest": "https://crests.football-data.org/772.png"
+  },
+  {
+    "owner": "Kurt",
+    "tier": "Competitive",
+    "flag": "🇮🇷",
+    "name": "Iran",
+    "apiId": 840,
+    "apiName": "Iran",
+    "tla": "IRN",
+    "crest": "https://crests.football-data.org/iran.svg"
+  },
+  {
+    "owner": "Kurt",
+    "tier": "Outsiders",
+    "flag": "🇳🇴",
+    "name": "Norway",
+    "apiId": 8872,
+    "apiName": "Norway",
+    "tla": "NOR",
+    "crest": "https://crests.football-data.org/813.svg"
+  },
+  {
+    "owner": "Kurt",
+    "tier": "Underdogs",
+    "flag": "🇬🇭",
+    "name": "Ghana",
+    "apiId": 763,
+    "apiName": "Ghana",
+    "tla": "GHA",
+    "crest": "https://crests.football-data.org/ghana.svg"
+  },
+  {
+    "owner": "Lauren",
+    "tier": "Elite",
+    "flag": "🇳🇱",
+    "name": "Netherlands",
+    "apiId": 8601,
+    "apiName": "Netherlands",
+    "tla": "NED",
+    "crest": "https://crests.football-data.org/8601.svg"
+  },
+  {
+    "owner": "Lauren",
+    "tier": "Strong",
+    "flag": "🇯🇵",
+    "name": "Japan",
+    "apiId": 766,
+    "apiName": "Japan",
+    "tla": "JPN",
+    "crest": "https://crests.football-data.org/766.svg"
+  },
+  {
+    "owner": "Lauren",
+    "tier": "Challengers",
+    "flag": "🇪🇬",
+    "name": "Egypt",
+    "apiId": 825,
+    "apiName": "Egypt",
+    "tla": "EGY",
+    "crest": "https://crests.football-data.org/825.svg"
+  },
+  {
+    "owner": "Lauren",
+    "tier": "Competitive",
+    "flag": "🇨🇦",
+    "name": "Canada",
+    "apiId": 828,
+    "apiName": "Canada",
+    "tla": "CAN",
+    "crest": "https://crests.football-data.org/canada.svg"
+  },
+  {
+    "owner": "Lauren",
+    "tier": "Outsiders",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "name": "Scotland",
+    "apiId": 8873,
+    "apiName": "Scotland",
+    "tla": "SCO",
+    "crest": "https://crests.football-data.org/814.svg"
+  },
+  {
+    "owner": "Lauren",
+    "tier": "Underdogs",
+    "flag": "🇯🇴",
+    "name": "Jordan",
+    "apiId": 8049,
+    "apiName": "Jordan",
+    "tla": "JOR",
+    "crest": "https://crests.football-data.org/8049.png"
+  }
+]

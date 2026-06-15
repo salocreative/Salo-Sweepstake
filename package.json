@@ -1,0 +1,15 @@
+{
+  "name": "salo-sweepstake",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Salo Sweepstake tracker for the FIFA World Cup 2026, powered by football-data.org.",
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "regen:sweepstake": "node scripts/regen-sweepstake.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

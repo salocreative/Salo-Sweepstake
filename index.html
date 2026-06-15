@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Salo Sweepstake — World Cup 2026</title>
+    <meta name="description" content="Salo Sweepstake tracker for the FIFA World Cup 2026." />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="preconnect" href="https://crests.football-data.org" crossorigin />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">🏆</span>
+          <div class="brand-text">
+            <h1>Salo Sweepstake</h1>
+            <p>FIFA World Cup 2026</p>
+          </div>
+        </div>
+        <div class="meta-pill" id="meta-pill" title="Last data refresh">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="last-updated">Loading…</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="leaderboard" id="leaderboard" aria-label="Owner leaderboard"></section>
+
+      <nav class="tabs" role="tablist" aria-label="Sections">
+        <button class="tab" role="tab" data-tab="teams" aria-selected="true">Teams</button>
+        <button class="tab" role="tab" data-tab="groups" aria-selected="false">Groups</button>
+        <button class="tab" role="tab" data-tab="fixtures" aria-selected="false">Fixtures</button>
+      </nav>
+
+      <section id="panel-teams" class="panel" role="tabpanel" aria-labelledby="teams">
+        <div id="teams-view" class="loading">Loading teams…</div>
+      </section>
+
+      <section id="panel-groups" class="panel" role="tabpanel" aria-labelledby="groups" hidden>
+        <div id="groups-view" class="loading">Loading group standings…</div>
+      </section>
+
+      <section id="panel-fixtures" class="panel" role="tabpanel" aria-labelledby="fixtures" hidden>
+        <div class="fixtures-controls">
+          <div class="segmented" role="tablist" aria-label="Match filter">
+            <button class="seg active" data-filter="upcoming">Upcoming</button>
+            <button class="seg" data-filter="live">Live</button>
+            <button class="seg" data-filter="recent">Recent</button>
+            <button class="seg" data-filter="all">All</button>
+          </div>
+          <label class="owner-filter">
+            <span>Owner</span>
+            <select id="owner-filter">
+              <option value="">Everyone</option>
+            </select>
+          </label>
+        </div>
+        <div id="fixtures-view" class="loading">Loading fixtures…</div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Data from
+          <a href="https://www.football-data.org/" rel="noopener" target="_blank">football-data.org</a>.
+          Built for office bragging rights.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
