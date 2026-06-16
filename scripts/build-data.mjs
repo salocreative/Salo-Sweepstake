@@ -14,6 +14,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
+import { computeStandingsFromMatches } from "./lib/standings.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -176,37 +177,12 @@ async function main() {
     },
   }));
 
-  console.log(`[build-data] Fetching ${COMPETITION} standings…`);
-  let standings = [];
-  try {
-    const standingsRes = await api(`/competitions/${COMPETITION}/standings`);
-    standings = (standingsRes.standings ?? []).map((s) => ({
-      stage: s.stage,
-      type: s.type,
-      group: s.group,
-      table: (s.table ?? []).map((row) => ({
-        position: row.position,
-        team: row.team && {
-          id: row.team.id,
-          name: row.team.name,
-          shortName: row.team.shortName,
-          tla: row.team.tla,
-          crest: row.team.crest,
-        },
-        playedGames: row.playedGames,
-        won: row.won,
-        draw: row.draw,
-        lost: row.lost,
-        points: row.points,
-        goalsFor: row.goalsFor,
-        goalsAgainst: row.goalsAgainst,
-        goalDifference: row.goalDifference,
-        form: row.form,
-      })),
-    }));
-  } catch (err) {
-    console.warn(`[build-data] Standings unavailable: ${err.message}`);
-  }
+  // football-data.org's WC standings endpoint has been flaky (returns an
+  // empty array even mid-tournament). Compute standings from the match
+  // snapshot instead — that data is always available and consistent with
+  // what the Fixtures tab is showing.
+  console.log(`[build-data] Computing standings from matches…`);
+  const standings = computeStandingsFromMatches(matches);
 
   const meta = {
     competition: COMPETITION,
