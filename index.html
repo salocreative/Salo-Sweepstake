@@ -27,20 +27,19 @@
     </header>
 
     <main class="container">
-      <section class="leaderboard" id="leaderboard" aria-label="Owner leaderboard"></section>
-
       <nav class="tabs" role="tablist" aria-label="Sections">
-        <button class="tab" role="tab" data-tab="teams" aria-selected="true">Teams</button>
-        <button class="tab" role="tab" data-tab="groups" aria-selected="false">Groups</button>
+        <button class="tab" role="tab" data-tab="groups" aria-selected="true">Groups</button>
+        <button class="tab" role="tab" data-tab="leaderboard" aria-selected="false">Leaderboard</button>
         <button class="tab" role="tab" data-tab="fixtures" aria-selected="false">Fixtures</button>
+        <button class="tab" role="tab" data-tab="teams" aria-selected="false">Teams</button>
       </nav>
 
-      <section id="panel-teams" class="panel" role="tabpanel" aria-labelledby="teams">
-        <div id="teams-view" class="loading">Loading teams…</div>
+      <section id="panel-groups" class="panel" role="tabpanel" aria-labelledby="groups">
+        <div id="groups-view" class="loading">Loading group standings…</div>
       </section>
 
-      <section id="panel-groups" class="panel" role="tabpanel" aria-labelledby="groups" hidden>
-        <div id="groups-view" class="loading">Loading group standings…</div>
+      <section id="panel-leaderboard" class="panel" role="tabpanel" aria-labelledby="leaderboard" hidden>
+        <div id="leaderboard" class="leaderboard" aria-label="Owner leaderboard"></div>
       </section>
 
       <section id="panel-fixtures" class="panel" role="tabpanel" aria-labelledby="fixtures" hidden>
@@ -59,6 +58,10 @@
           </label>
         </div>
         <div id="fixtures-view" class="loading">Loading fixtures…</div>
+      </section>
+
+      <section id="panel-teams" class="panel" role="tabpanel" aria-labelledby="teams" hidden>
+        <div id="teams-view" class="loading">Loading teams…</div>
       </section>
     </main>
 

@@ -534,15 +534,17 @@ function renderMatch(m) {
 }
 
 // ---------- tabs ----------
+const TAB_IDS = ["groups", "leaderboard", "fixtures", "teams"];
+
 function activateTab(name) {
   $$(".tab").forEach((b) => {
     const active = b.dataset.tab === name;
     b.classList.toggle("active", active);
     b.setAttribute("aria-selected", String(active));
   });
-  for (const id of ["teams", "groups", "fixtures"]) {
+  for (const id of TAB_IDS) {
     const panel = $(`#panel-${id}`);
-    panel.hidden = id !== name;
+    if (panel) panel.hidden = id !== name;
   }
 }
 
