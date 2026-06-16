@@ -588,6 +588,7 @@ function renderMetaPill() {
 async function init() {
   wireTabs();
   populateOwnerFilter();
+  activateTab("groups");
 
   try {
     const [sweepstake, matches, standings, teams, meta] = await Promise.all([
