@@ -421,6 +421,132 @@ function renderGroups() {
   `;
 }
 
+// ---------- knockout tab ----------
+function renderKnockout() {
+  const view = $("#knockout-view");
+
+  const byStage = new Map();
+  for (const m of state.matches) {
+    if (!m.stage || m.stage === "GROUP_STAGE") continue;
+    if (!byStage.has(m.stage)) byStage.set(m.stage, []);
+    byStage.get(m.stage).push(m);
+  }
+  for (const list of byStage.values()) {
+    list.sort((a, b) => new Date(a.utcDate) - new Date(b.utcDate));
+  }
+
+  view.classList.remove("loading");
+
+  // If the API hasn't published any knockout fixtures yet, show a friendly
+  // placeholder. Once the World Cup draw resolves we'll get all 32 KO
+  // fixtures back from football-data.org (initially with TBD teams).
+  const totalKO = [...byStage.values()].reduce((n, l) => n + l.length, 0);
+  if (totalKO === 0) {
+    view.innerHTML = `
+      <div class="empty">
+        <p>The knockout bracket will appear once football-data.org publishes the schedule. Teams stay as TBD until the group stage finishes.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const rounds = KNOCKOUT_ROUNDS.map(({ stage, title, slots }) => {
+    const matches = byStage.get(stage) ?? [];
+    const padded = [...matches];
+    while (padded.length < slots) padded.push(null);
+    return { stage, title, matches: padded.slice(0, slots) };
+  });
+
+  const thirdPlace = byStage.get("THIRD_PLACE")?.[0] ?? null;
+
+  view.innerHTML = `
+    <div class="bracket-wrap">
+      <div class="bracket" role="list">
+        ${rounds.map((r) => `
+          <section class="bracket-round" role="listitem" data-stage="${r.stage}">
+            <header class="bracket-round-head">
+              <h3>${escapeHtml(r.title)}</h3>
+              <span class="bracket-round-count">${r.matches.filter(Boolean).length}</span>
+            </header>
+            <ol class="bracket-matches">
+              ${r.matches.map((m) => renderBracketMatch(m)).join("")}
+            </ol>
+          </section>
+        `).join("")}
+      </div>
+      ${thirdPlace ? `
+        <section class="bracket-third">
+          <header class="bracket-round-head">
+            <h3>3rd-place Play-off</h3>
+          </header>
+          <ol class="bracket-matches">
+            ${renderBracketMatch(thirdPlace)}
+          </ol>
+        </section>
+      ` : ""}
+    </div>
+  `;
+}
+
+function renderBracketMatch(m) {
+  if (!m) {
+    return `
+      <li class="bracket-match is-placeholder" aria-hidden="true">
+        <div class="bracket-side"><span class="bracket-team-name muted">TBD</span></div>
+        <div class="bracket-side"><span class="bracket-team-name muted">TBD</span></div>
+      </li>
+    `;
+  }
+
+  const home = findSweepstakeForApiTeam(m.homeTeam);
+  const away = findSweepstakeForApiTeam(m.awayTeam);
+  const hs = m.score?.fullTime?.home ?? m.score?.fullTime?.homeTeam;
+  const as = m.score?.fullTime?.away ?? m.score?.fullTime?.awayTeam;
+  const finished = m.status === "FINISHED";
+  const live = ["IN_PLAY", "PAUSED", "LIVE"].includes(m.status);
+  const winner = m.score?.winner;
+
+  const sideClass = (side, entry) => [
+    "bracket-side",
+    entry ? "owned" : "",
+    finished && ((side === "home" && winner === "HOME_TEAM") || (side === "away" && winner === "AWAY_TEAM")) ? "winner" : "",
+    finished && winner && winner !== "DRAW" && ((side === "home" && winner === "AWAY_TEAM") || (side === "away" && winner === "HOME_TEAM")) ? "loser" : "",
+  ].filter(Boolean).join(" ");
+
+  const sideStyle = (entry) => entry ? `style="--owner:${OWNER_COLORS[entry.owner] ?? "#999"}"` : "";
+
+  const meta = (() => {
+    if (live) return `<span class="bracket-status live">● LIVE</span>`;
+    if (finished) return `<span class="bracket-status finished">FT</span>`;
+    return `<span class="bracket-status scheduled">${escapeHtml(formatBracketDate(m.utcDate))}</span>`;
+  })();
+
+  const teamRow = (side, team, entry, score) => `
+    <div class="${sideClass(side, entry)}" ${sideStyle(entry)}>
+      ${team?.name
+        ? `${teamCrest(team, entry)}
+           <span class="bracket-team-name">${escapeHtml(team.shortName ?? team.name)}</span>
+           ${entry ? ownerBadge(entry.owner) : ""}`
+        : `<span class="bracket-team-name muted">TBD</span>`}
+      <span class="bracket-score">${score != null ? score : ""}</span>
+    </div>
+  `;
+
+  return `
+    <li class="bracket-match">
+      <div class="bracket-meta">${meta}</div>
+      ${teamRow("home", m.homeTeam, home, hs)}
+      ${teamRow("away", m.awayTeam, away, as)}
+    </li>
+  `;
+}
+
+function formatBracketDate(iso) {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "TBD";
+  return d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
+}
+
 // ---------- fixtures tab ----------
 function renderFixtures() {
   const view = $("#fixtures-view");
@@ -534,7 +660,15 @@ function renderMatch(m) {
 }
 
 // ---------- tabs ----------
-const TAB_IDS = ["groups", "leaderboard", "fixtures", "teams"];
+const TAB_IDS = ["groups", "knockout", "leaderboard", "fixtures", "teams"];
+
+const KNOCKOUT_ROUNDS = [
+  { stage: "LAST_32", title: "Round of 32", slots: 16 },
+  { stage: "LAST_16", title: "Round of 16", slots: 8 },
+  { stage: "QUARTER_FINALS", title: "Quarter-finals", slots: 4 },
+  { stage: "SEMI_FINALS", title: "Semi-finals", slots: 2 },
+  { stage: "FINAL", title: "Final", slots: 1 },
+];
 
 function activateTab(name) {
   $$(".tab").forEach((b) => {
@@ -614,6 +748,7 @@ async function init() {
     renderLeaderboard();
     renderTeams();
     renderGroups();
+    renderKnockout();
     renderFixtures();
   } catch (err) {
     console.error(err);

@@ -537,6 +537,192 @@ a:hover {
   background: linear-gradient(90deg, color-mix(in oklab, var(--owner) 14%, transparent), transparent 70%);
 }
 
+/* ---------- knockout tab ---------- */
+.bracket-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.bracket {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.bracket-round {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.bracket-round-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 4px 8px;
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 12px;
+}
+
+.bracket-round-head h3 {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.bracket-round-count {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.bracket-matches {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.bracket-match {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.bracket-match.is-placeholder {
+  border-style: dashed;
+  background: transparent;
+  opacity: 0.55;
+}
+
+.bracket-meta {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.bracket-status.live {
+  color: var(--danger);
+}
+
+.bracket-status.finished {
+  color: var(--text-dim);
+}
+
+.bracket-side {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  min-width: 0;
+}
+
+.bracket-side > .bracket-team-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.bracket-side > .owner-chip {
+  flex: none;
+}
+
+.bracket-side > .bracket-score {
+  flex: none;
+}
+
+.bracket-side .crest {
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  border-radius: 4px;
+}
+
+.bracket-team-name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bracket-team-name.muted {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.bracket-score {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 14px;
+  text-align: right;
+}
+
+.bracket-side.owned {
+  background: color-mix(in oklab, var(--owner) 10%, transparent);
+  border-color: color-mix(in oklab, var(--owner) 30%, transparent);
+}
+
+.bracket-side.winner {
+  background: color-mix(in oklab, var(--success) 14%, transparent);
+  border-color: color-mix(in oklab, var(--success) 40%, transparent);
+}
+
+.bracket-side.winner.owned {
+  background: linear-gradient(90deg,
+    color-mix(in oklab, var(--owner) 18%, transparent),
+    color-mix(in oklab, var(--success) 14%, transparent));
+}
+
+.bracket-side.loser {
+  opacity: 0.55;
+}
+
+.bracket-side .owner-chip {
+  font-size: 10px;
+  padding: 1px 6px;
+}
+
+.bracket-third {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  max-width: 320px;
+}
+
+.bracket-third .bracket-matches {
+  justify-content: flex-start;
+}
+
+@media (max-width: 720px) {
+  .bracket {
+    grid-auto-columns: 78vw;
+  }
+}
+
 /* ---------- fixtures tab ---------- */
 .fixtures-controls {
   display: flex;

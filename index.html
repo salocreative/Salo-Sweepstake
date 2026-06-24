@@ -29,6 +29,7 @@
     <main class="container">
       <nav class="tabs" role="tablist" aria-label="Sections">
         <button class="tab" role="tab" data-tab="groups" aria-selected="true">Groups</button>
+        <button class="tab" role="tab" data-tab="knockout" aria-selected="false">Knockout</button>
         <button class="tab" role="tab" data-tab="leaderboard" aria-selected="false">Leaderboard</button>
         <button class="tab" role="tab" data-tab="fixtures" aria-selected="false">Fixtures</button>
         <button class="tab" role="tab" data-tab="teams" aria-selected="false">Teams</button>
@@ -36,6 +37,10 @@
 
       <section id="panel-groups" class="panel" role="tabpanel" aria-labelledby="groups">
         <div id="groups-view" class="loading">Loading group standings…</div>
+      </section>
+
+      <section id="panel-knockout" class="panel" role="tabpanel" aria-labelledby="knockout" hidden>
+        <div id="knockout-view" class="loading">Loading knockout bracket…</div>
       </section>
 
       <section id="panel-leaderboard" class="panel" role="tabpanel" aria-labelledby="leaderboard" hidden>
